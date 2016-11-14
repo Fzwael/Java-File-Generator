@@ -186,7 +186,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_nameInputActionPerformed
 
     private void validatebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validatebtnActionPerformed
-       /* int unit =  1024;
+        int unit =  1024;
         if (sizeUnitInput.getSelectedItem().toString().equals("MO"))
             unit =  1024 * 1024;
         if (sizeUnitInput.getSelectedItem().toString().equals("GO"))
@@ -195,9 +195,9 @@ public class MainFrame extends javax.swing.JFrame {
         int nbChar = size ; // 1 byte per char 
         //int lineLength = 1000; // TODO make user choose is
         //int nbLines = nbChar / (lineLength + 1); // retour a la ligne = 2
-        //int lastLinechars = nbChar - nbLines * (lineLength + 1);*/
+        //int lastLinechars = nbChar - nbLines * (lineLength + 1);
         try{
-            /*File file = new File(nameInput.getText());
+            File file = new File(nameInput.getText());
             PrintWriter writer = new PrintWriter(file, "UTF-8");
             for(int i=0 ; i< size / 1000 ; i++){
                 writer.print(RandomGenerator.generateRandomString(1000));
@@ -206,7 +206,7 @@ public class MainFrame extends javax.swing.JFrame {
             writer.close();
             System.out.println("calculated size is " + size);
             System.out.println("actual size is " + file.length());
-            System.out.println("NOW COMPRESSING FILE");*/
+            System.out.println("NOW COMPRESSING FILE");
                 if(alg1){
                     System.out.println("ALGORITHME 1");
                     // RLE.compress(file);
