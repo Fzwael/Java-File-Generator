@@ -45,7 +45,6 @@ public class MainFrame extends javax.swing.JFrame {
         checkbtn1 = new javax.swing.JCheckBox();
         checkbtn2 = new javax.swing.JCheckBox();
         checkbtn3 = new javax.swing.JCheckBox();
-        checkbtn4 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -92,24 +91,17 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        checkbtn2.setText("ALG2");
+        checkbtn2.setText("HUFFMAN");
         checkbtn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkbtn2ActionPerformed(evt);
             }
         });
 
-        checkbtn3.setText("ALG3");
+        checkbtn3.setText("LZW");
         checkbtn3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkbtn3ActionPerformed(evt);
-            }
-        });
-
-        checkbtn4.setText("ALG4");
-        checkbtn4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkbtn4ActionPerformed(evt);
             }
         });
 
@@ -119,11 +111,6 @@ public class MainFrame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(nomFichiertxt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nbLingnetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(114, 114, 114)
                         .addComponent(nameInput, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -136,14 +123,16 @@ public class MainFrame extends javax.swing.JFrame {
                         .addGap(150, 150, 150)
                         .addComponent(validatebtn))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(checkbtn1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(checkbtn2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(checkbtn3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(checkbtn4)))
+                        .addGap(44, 44, 44)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(checkbtn1)
+                                .addGap(59, 59, 59)
+                                .addComponent(checkbtn2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(checkbtn3))
+                            .addComponent(nomFichiertxt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nbLingnetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -163,8 +152,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(checkbtn1)
                     .addComponent(checkbtn2)
-                    .addComponent(checkbtn3)
-                    .addComponent(checkbtn4))
+                    .addComponent(checkbtn3))
                 .addGap(28, 28, 28)
                 .addComponent(validatebtn)
                 .addGap(19, 19, 19))
@@ -208,11 +196,11 @@ public class MainFrame extends javax.swing.JFrame {
             System.out.println("actual size is " + file.length());
             System.out.println("NOW COMPRESSING FILE");
                 if(alg1){
-                    System.out.println("ALGORITHME 1");
+                    System.out.println("RLE");
                     // RLE.compress(file);
                 }
                 if(alg2){
-                    System.out.println("ALGORITHME 2");
+                    System.out.println("HUFFMAN");
                     
                 }
                 if(alg3){
@@ -247,12 +235,6 @@ public class MainFrame extends javax.swing.JFrame {
         System.out.println("ALG3");
         alg3 = !alg3;
     }//GEN-LAST:event_checkbtn3ActionPerformed
-
-    private void checkbtn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkbtn4ActionPerformed
-        // TODO add your handling code here:
-        System.out.println("ALG4");
-        alg4 = !alg4;
-    }//GEN-LAST:event_checkbtn4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -293,7 +275,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JCheckBox checkbtn1;
     private javax.swing.JCheckBox checkbtn2;
     private javax.swing.JCheckBox checkbtn3;
-    private javax.swing.JCheckBox checkbtn4;
     private javax.swing.JTextField nameInput;
     private javax.swing.JTextField nbLingnetxt;
     private javax.swing.JTextField nomFichiertxt;
