@@ -5,6 +5,8 @@
  */
 package filegenerator;
 
+import compressors.Huffman.Huffman;
+import compressors.LZW;
 import compressors.RLE;
 import helpers.RandomGenerator;
 import java.io.File;
@@ -187,25 +189,37 @@ public class MainFrame extends javax.swing.JFrame {
         try{
             File file = new File(nameInput.getText());
             PrintWriter writer = new PrintWriter(file, "UTF-8");
+            /*
             for(int i=0 ; i< size / 1000 ; i++){
                 writer.print(RandomGenerator.generateRandomString(1000));
             }
             writer.print(RandomGenerator.generateRandomString(size - ((size/1000) * 1000)));
+            */
+            
+             //LRE efficace
+            for(int x=0 ; x < 100 ; x++)
+                writer.print("AAAAAAAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCCCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
+            
+            /*
+             //LZW efficace
+            for(int x=0 ; x < 100 ; x++)
+                writer.print("ABAABCAABCAABCABCABBAAABAABCAABCAABCABCABBAAABAABCAABCAABCABCABBAAABAABCAABCAABCABCABBAAABAABCAABCAABCABCABBAAABAABCAABCAABCABCABBAAABAABCAABCAABCABCABBAAABAABCAABCAABCABCABBAAABAABCAABCAABCABCABBAAABAABCAABCAABCABCABBAAABAABCAABCAABCABCABBAAABAABCAABCAABCABCABBAAABAABCAABCAABCABCABBAAABAABCAABCAABCABCABBAAABAABCAABCAABCABCABBAAABAABCAABCAABCABCABBAAABAABCAABCAABCABCABBAAABAABCAABCAABCABCAB");
+            */
             writer.close();
             System.out.println("calculated size is " + size);
             System.out.println("actual size is " + file.length());
             System.out.println("NOW COMPRESSING FILE");
                 if(alg1){
                     System.out.println("RLE");
-                    // RLE.compress(file);
+                        RLE.compress(file);
                 }
                 if(alg2){
                     System.out.println("HUFFMAN");
-                    
+                    Huffman.compress(file);
                 }
                 if(alg3){
-                    System.out.println("ALGORITHME 3");
-                    
+                    System.out.println("LZW");
+                    LZW.compress(file);
                 }
                 if(alg4){
                     System.out.println("ALGORITHME 4");

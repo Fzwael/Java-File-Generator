@@ -18,7 +18,7 @@ import java.nio.charset.Charset;
  */
 public class RLE {
     public static void compress(File file) {
-        System.out.println("I will compress " + file.getName());
+        // System.out.println("I will compress " + file.getName());
         try{
         File compressedFile = new File(file.getName() + "-RLE");
         PrintWriter writer = new PrintWriter(compressedFile, "UTF-8");
@@ -26,7 +26,7 @@ public class RLE {
         int c;
         int occ = 1;
         char prevChar = (char) reader.read();
-        System.out.println("INIT " + prevChar);
+        // System.out.println("INIT " + prevChar);
         while((c = reader.read()) != -1) {
             char character = (char) c;
             if(character != prevChar){
@@ -42,7 +42,7 @@ public class RLE {
         }catch(Exception e){
             System.out.println(e.toString());
         }
-        System.out.println();
-        System.out.println("ALL DONE");
+        // System.out.println();
+        System.out.println("ALL DONE RLE");
     }
 }
